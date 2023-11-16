@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Upload and Download</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>File Upload and Download</h1>
+
+    <div id="formdiv">
+      <label for="fileInput">Choose a file:</label>
+      <input type="file" name="file" id="fileInput" required>
+      
+      <div class="checkbox-group">
+        <input type="checkbox" name="overwrite" id="overwriteCheckbox">
+        <label for="overwriteCheckbox">Overwrite existing file</label>
+      </div>
+      
+      <button id="submit" type="submit">Upload</button>
+    </div>
+
+    <ul id="fileList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
