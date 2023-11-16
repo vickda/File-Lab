@@ -6,7 +6,7 @@ const fs = require('fs');
 
 const app = express();
 const port = process.env.PORT || 3000;
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname));
 
 // Set up Azure Storage Blob Service
 const connectionString = 'DefaultEndpointsProtocol=https;AccountName=filelab;AccountKey=xszf6EZ+eSpY8e2y0qF1Vmk/7ovg4OfjUTojwv1kml3EfiEv0kWhRsD0BShvxbDPEsPKBD07M/Hx+AStI09eKQ==;EndpointSuffix=core.windows.net'; // Replace with your actual connection string
@@ -20,7 +20,7 @@ const upload = multer({ storage: storage });
 
 // Routes
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Route to handle file upload
