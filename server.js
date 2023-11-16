@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 });
 
 // Route to handle file upload
-app.post('/upload', upload.single('file'), async (req, res) => {
+app.post('https://file-lab.azurewebsites.net/upload', upload.single('file'), async (req, res) => {
   try {
     const file = req.file;
     const fileName = file.originalname;
@@ -41,7 +41,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
 });
 
 // Route to handle file upload with duplicate logic
-app.post('/uploadduplicate', upload.single('file'), async (req, res) => {
+app.post('https://file-lab.azurewebsites.net/uploadduplicate', upload.single('file'), async (req, res) => {
   try {
     const file = req.file;
     const originalName = file.originalname;
@@ -68,7 +68,7 @@ app.post('/uploadduplicate', upload.single('file'), async (req, res) => {
 });
 
 // Route to get a list of files
-app.get('/files', async (req, res) => {
+app.get('https://file-lab.azurewebsites.net/files', async (req, res) => {
   try {
     const files = [];
     for await (const blobItem of containerClient.listBlobsFlat()) {
@@ -83,7 +83,7 @@ app.get('/files', async (req, res) => {
 });
 
 // Route to handle file deletion
-app.delete('/delete/:filename', async (req, res) => {
+app.delete('https://file-lab.azurewebsites.net/delete/:filename', async (req, res) => {
   try {
     const filename = req.params.filename;
 
@@ -99,7 +99,7 @@ app.delete('/delete/:filename', async (req, res) => {
 });
 
 // Route for downloading file
-app.get('/download/:filename', async (req, res) => {
+app.get('https://file-lab.azurewebsites.net/download/:filename', async (req, res) => {
   try {
     const filename = req.params.filename;
 
