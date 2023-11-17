@@ -33,14 +33,14 @@ input {
 
 button {
   padding: 10px;
-  background-color: #4caf50;
+  background-color: black;
   color: white;
   border: none;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: black;
 }
 
 ul {
