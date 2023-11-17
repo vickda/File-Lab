@@ -9,9 +9,9 @@ const port = process.env.PORT || 3000;
 app.use(express.static(__dirname));
 
 // Set up Azure Storage Blob Service
-const connectionString = 'DefaultEndpointsProtocol=https;AccountName=filelab;AccountKey=xszf6EZ+eSpY8e2y0qF1Vmk/7ovg4OfjUTojwv1kml3EfiEv0kWhRsD0BShvxbDPEsPKBD07M/Hx+AStI09eKQ==;EndpointSuffix=core.windows.net'; // Replace with your actual connection string
+const connectionString = 'DefaultEndpointsProtocol=https;AccountName=filelab;AccountKey=xszf6EZ+eSpY8e2y0qF1Vmk/7ovg4OfjUTojwv1kml3EfiEv0kWhRsD0BShvxbDPEsPKBD07M/Hx+AStI09eKQ==;EndpointSuffix=core.windows.net';
 const blobServiceClient = BlobServiceClient.fromConnectionString(connectionString);
-const containerName = 'files'; // Replace with your actual container name
+const containerName = 'files';
 const containerClient = blobServiceClient.getContainerClient(containerName);
 
 // Set storage engine for multer (file upload)
